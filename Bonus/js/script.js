@@ -1,27 +1,46 @@
 console.log("Non sottovalutare la potenza di PlayStation");
 
-var nameP = prompt("inserisci il tuo nome");
-var surnameP = prompt("inserisci il tuo cognome");
-var colorP = prompt("Inserisci il tuo colore preferito");
-var giorno = prompt("inserisci il tuo giorno di nascita in cifre");
-var mese = prompt("inserisci il tuo mese di nascita in cifre");
-var anno= prompt("inserisci il tuo anno di nascita in cifre");
+var km = prompt("Inserisci il numero dei km");
+var bDay = prompt("inserisci il tuo giorno di nascita in cifre");
+var bMonth = prompt("inserisci il tuo mese di nascita i cifre");
+var bYear = prompt("inserisci il tuo anno di nascita");
+var priceEKm = 0.21;
+var totalPrice = priceEKm * km;
+
+var toDay = new Date();
+
+var gday=toDay.getDate();
+var gmonth = (toDay.getMonth()+1);
+var gyear = toDay.getFullYear();
+
+var age =(gyear - bYear)-1;
+
+if(bMonth<gmonth){
+    age = gyear - bYear;
+} else {
+    if(bMonth != gmonth){
+    } else{
+        if(bDay<=gday){
+           age = gyear - bYear;
+        }
+    }
+}
 
 
-var primoF = 99991;
-var primoS = 86413;
-var primoT = 93187;
-var a = parseInt(giorno * primoF /100000);
-var b = parseInt(mese/primoS*100000) ;
-var c = parseInt((primoT/anno)/1000);
-var d = parseInt(100*(a+b+c) /171);
+
+if(age>65){
+    var totalPriceDis = totalPrice * 0.6; //40% di sconto
+}else{
+    if(age<18){
+        var totalPriceDis = totalPrice * 0.8; //20% di sconto
+    } else{
+        var totalPriceDis = totalPrice;
+    }
+}
+var priceRound =Math.round (totalPriceDis * 100) / 100;
 
 
-var inespugnabile = d + nameP+ a + surnameP + b + colorP + c;
 
-document.getElementById("out").innerHTML="La tua 'inespugnabile' password :" + inespugnabile+21 ;
-
-
-
+document.getElementById("out").innerHTML="Il totale è :" + priceRound +"€"+ "   " +age + "   "+gmonth + " "+ toDay;
 
 
