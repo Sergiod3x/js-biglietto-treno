@@ -39,6 +39,6 @@ var priceRound =Math.round (totalPriceDis * 100) / 100;
 
 
 
-document.getElementById("out").innerHTML="Il totale è :" + priceRound +"€";
+document.getElementById("out").innerHTML="Il totale è : " + priceRound +"€";
 
 
