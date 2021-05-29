@@ -1,5 +1,3 @@
-console.log("Non sottovalutare la potenza di PlayStation");
-
 var km = prompt("Inserisci il numero dei km");
 var bDay = prompt("inserisci il tuo giorno di nascita in cifre");
 var bMonth = prompt("inserisci il tuo mese di nascita i cifre");
@@ -41,6 +39,6 @@ var priceRound =Math.round (totalPriceDis * 100) / 100;
 
 
 
-document.getElementById("out").innerHTML="Il totale è :" + priceRound +"€"+ "   " +age + "   "+gmonth + " "+ toDay;
+document.getElementById("out").innerHTML="Il totale è :" + priceRound +"€";
 
 
